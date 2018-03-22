@@ -72,16 +72,34 @@ public class ArraySequence implements Sequence {
 	@Override
 	public void addLast(Object element) {
 		// Implementierung in Aufgabe 1
+		assertCapacity(size + 1);
+		array[size++] = element;
 	}
 
 	@Override
 	public void insert(int index, Object element) throws IndexOutOfBoundsException {
 		// Implementierung in Aufgabe 2
+		if (index > size) {
+			throw new IndexOutOfBoundsException();
+		}
+		assertCapacity(size + 1);
+		for (int i = size; i >= index; i--) {
+			array[i + 1] = array[i];
+		}
+		array[index] = element;
+		size++;
 	}
 
 	@Override
 	public void delete(int index) throws IndexOutOfBoundsException {
 		// Implementierung in Aufgabe 3
+		if (index > size) {
+			throw new IndexOutOfBoundsException();
+		}
+		for (int i = index; i < size; i++) {
+			array[i] = array[i + 1];
+		}
+		size--;
 	}
 
 }
