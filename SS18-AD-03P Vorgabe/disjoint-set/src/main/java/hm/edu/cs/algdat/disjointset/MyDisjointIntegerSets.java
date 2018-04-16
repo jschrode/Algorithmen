@@ -1,11 +1,15 @@
 package hm.edu.cs.algdat.disjointset;
 
+
 /**
  * Implementierung von {@link DisjointIntegerSets}.
  * 
- * @author katz.bastian
+ * @author katz.bastian, schrode@hm.edu
  */
 public class MyDisjointIntegerSets implements DisjointIntegerSets {
+
+	private int size = 0;
+	private int[] set;
 
 	/**
 	 * Erzeugt eine Disjoint-Set Datenstruktur für die Zahlen 0 bis size-1.
@@ -16,7 +20,11 @@ public class MyDisjointIntegerSets implements DisjointIntegerSets {
 	 *            Größe der Datenstruktur, d.h. Anzahl der Elemente
 	 */
 	public MyDisjointIntegerSets(int size) {
-		//TODO: Konstruktor ergänzen
+		this.size = size;
+		set = new int[size];
+		for (int i = 0; i < size; i++) {
+			set[i] = i;
+		}
 	}
 
 	/*
@@ -25,9 +33,8 @@ public class MyDisjointIntegerSets implements DisjointIntegerSets {
 	 * @see hm.edu.cs.algdat.disjointset.DisjointIntegerSet#find(int)
 	 */
 	@Override
-	public int find(int a) {
-		//TODO: Repräsentanten finden/zurückgeben		
-		return 0;
+	public int find(int a) {		
+		return set[a];
 	}
 
 	/*
@@ -37,12 +44,24 @@ public class MyDisjointIntegerSets implements DisjointIntegerSets {
 	 */
 	@Override
 	public void union(int a, int b) {
-		//TODO: Datenstruktur aktualisieren!
+		if (set[a] < set[b]) {
+			for (int i = 0; i < size; i++) {
+				if (set[i] == set[b]) {
+					set[i] = set[a];
+				}
+			}
+		}
+		else {
+			for (int i = 0; i < size; i++) {
+				if (set[i] == set[a]) {
+					set[i] = set[b];
+				}
+			}
+		}
 	}
 
 	@Override
 	public int size() {
-		//TODO: Länge zurückgeben
-		return 0;
+		return size;
 	}
 }

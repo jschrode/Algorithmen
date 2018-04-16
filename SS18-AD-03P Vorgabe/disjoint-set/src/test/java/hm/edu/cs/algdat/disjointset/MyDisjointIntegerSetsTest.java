@@ -67,7 +67,7 @@ public class MyDisjointIntegerSetsTest {
 		sut.union(2, 0);
 		sut.union(3, 4);
 		for (int i = 0; i < 5; i++) {
-			Assert.assertEquals(0, sut.find(0));
+			Assert.assertEquals(0, sut.find(i));
 		}
 	}
 
