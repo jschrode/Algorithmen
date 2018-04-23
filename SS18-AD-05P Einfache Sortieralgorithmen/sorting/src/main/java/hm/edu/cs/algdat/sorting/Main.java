@@ -11,7 +11,7 @@ import hm.edu.cs.algdat.sorting.sorters.SelectionSorter;
 
 public class Main {
 
-	public static final int SIZE = 4000;
+	public static final int SIZE = 10000;
 
 	public static void main(String[] args) {
 
