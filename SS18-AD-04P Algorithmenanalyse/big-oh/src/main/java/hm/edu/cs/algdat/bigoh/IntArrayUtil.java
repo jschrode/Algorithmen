@@ -10,7 +10,7 @@ public class IntArrayUtil {
 
 		// Demo-Code zum Messen der Laufzeit der Schnittmengenberechnung für
 		// zwei gleich große Arrays
-		final int N = 20000;
+		final int N = 1000000;
 
 		// Erstellung zwei sortierte Arrays
 		int[] input1 = createSortedArray(N, 0);
@@ -43,8 +43,13 @@ public class IntArrayUtil {
 	 */
 	public static int countIntersectionUnsorted(int[] unsorted, int[] unsorted2) {
 		int result = 0;
-		// TODO: Aufgabe 2.1
-		
+		for (int i : unsorted) {
+			for (int j : unsorted2) {
+				if (i == j) {
+					result++;
+				}
+			}
+		}		
 		return result;
 	}
 
@@ -62,8 +67,11 @@ public class IntArrayUtil {
 	 */
 	public static int countIntersectionOneInputSorted(int[] unsorted, int[] sorted) {
 		int result = 0;
-		// TODO: Aufgabe 2.2
-		
+		for (int i : unsorted) {
+			if (binarySearch(sorted, i)) {
+				result++;				
+			}
+		}
 		return result;
 	}
 
