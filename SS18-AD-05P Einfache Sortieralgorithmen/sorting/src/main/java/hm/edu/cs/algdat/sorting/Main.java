@@ -9,6 +9,7 @@ import hm.edu.cs.algdat.sorting.sorters.BubbleSorter;
 import hm.edu.cs.algdat.sorting.sorters.GnomeSorter;
 import hm.edu.cs.algdat.sorting.sorters.InsertionSorter;
 import hm.edu.cs.algdat.sorting.sorters.MergeSorter;
+import hm.edu.cs.algdat.sorting.sorters.QuickSorter;
 import hm.edu.cs.algdat.sorting.sorters.SelectionSorter;
 
 public class Main {
@@ -25,6 +26,7 @@ public class Main {
 		// sorters.add(new BubbleSorter());
 		sorters.add(new MergeSorter());
 		sorters.add(new BetterMergeSorter());
+		sorters.add(new QuickSorter());
 
 		
 		// Lasse Algorithmen gegen verschiedene Eingaben laufen

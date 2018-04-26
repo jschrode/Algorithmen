@@ -27,8 +27,15 @@ public class QuickSorter extends AbstractSorter {
 	private <T extends Comparable<T>> int partition(Sortable<T> input, int lo, int hi, int pivotIndex) {
 		// TODO: Implementierung der Pivotisierung. Zurückgegeben wird die
 		// Position des Pivotelementes nach der Pivotisierung
+		for (int i = 0; i < (pivotIndex - 1); i++) {
+			for (int j = (input.length() - 1); i > pivotIndex; i--) {
+				if (input.greater(i, pivotIndex) || input.less(j, pivotIndex)) {
+					input.swap(i, j);
+				}
+			}
+		}
 
-		return 0;
+		return ;
 	}
 
 }
