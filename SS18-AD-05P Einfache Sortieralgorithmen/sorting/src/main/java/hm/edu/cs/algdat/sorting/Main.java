@@ -4,23 +4,27 @@ import java.util.LinkedList;
 import java.util.List;
 
 import hm.edu.cs.algdat.sorting.framework.AbstractSorter;
+import hm.edu.cs.algdat.sorting.sorters.BetterMergeSorter;
 import hm.edu.cs.algdat.sorting.sorters.BubbleSorter;
 import hm.edu.cs.algdat.sorting.sorters.GnomeSorter;
 import hm.edu.cs.algdat.sorting.sorters.InsertionSorter;
+import hm.edu.cs.algdat.sorting.sorters.MergeSorter;
 import hm.edu.cs.algdat.sorting.sorters.SelectionSorter;
 
 public class Main {
 
-	public static final int SIZE = 10000;
+	public static final int SIZE = 1000000;
 
 	public static void main(String[] args) {
 
 		// Erstelle Sortieralgorithmen
 		List<AbstractSorter> sorters = new LinkedList<AbstractSorter>();
-		sorters.add(new GnomeSorter());
-		sorters.add(new InsertionSorter());
-		sorters.add(new SelectionSorter());
-		sorters.add(new BubbleSorter());
+		// sorters.add(new GnomeSorter());
+		// sorters.add(new InsertionSorter());
+		// sorters.add(new SelectionSorter());
+		// sorters.add(new BubbleSorter());
+		sorters.add(new MergeSorter());
+		sorters.add(new BetterMergeSorter());
 
 		
 		// Lasse Algorithmen gegen verschiedene Eingaben laufen
