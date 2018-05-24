@@ -43,7 +43,19 @@ public class BinaryTree<T> {
    */
   public int getLeafCount() {
     // TODO: Aufgabe 1A
-    return 0;
+    return getLeafCount(root);
+  }
+  
+  private int getLeafCount(TreeNode<T> node) {
+	if (node == null) {
+		return 0;
+	}
+	if (node.left == null && node.right == null) {
+		return 1;
+	} else {
+		return getLeafCount(node.left) + getLeafCount(node.right);
+	}
+	  
   }
 
   /**
@@ -53,7 +65,17 @@ public class BinaryTree<T> {
    */
   public boolean contains(T element) {
     // TODO: Aufgabe 1B
-    return false;
+    return contains(element, root);
+  }
+  
+  private boolean contains(T element, TreeNode<T> node) {
+	  if (node == null) {
+		  return false;
+	  }
+	  if (node.data.equals(element)) {
+		  return true;
+	  } 
+	  return contains(element, node.left) || contains(element, node.right);
   }
 
   /**
