@@ -1,0 +1,4 @@
+HeapSorter:
+  HeapSorter hat die Eingabe nicht sortiert!!!
+    Eingabe der Sortierung war  [0,1,2,3,4,5].
+    Ergebnis der Sortierung war [5,4,2,3,1,0].

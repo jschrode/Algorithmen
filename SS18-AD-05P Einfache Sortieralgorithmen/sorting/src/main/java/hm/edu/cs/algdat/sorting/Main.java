@@ -7,6 +7,7 @@ import hm.edu.cs.algdat.sorting.framework.AbstractSorter;
 import hm.edu.cs.algdat.sorting.sorters.BetterMergeSorter;
 import hm.edu.cs.algdat.sorting.sorters.BubbleSorter;
 import hm.edu.cs.algdat.sorting.sorters.GnomeSorter;
+import hm.edu.cs.algdat.sorting.sorters.HeapSorter;
 import hm.edu.cs.algdat.sorting.sorters.InsertionSorter;
 import hm.edu.cs.algdat.sorting.sorters.MergeSorter;
 import hm.edu.cs.algdat.sorting.sorters.QuickSorter;
@@ -14,7 +15,7 @@ import hm.edu.cs.algdat.sorting.sorters.SelectionSorter;
 
 public class Main {
 
-	public static final int SIZE = 10000;
+	public static final int SIZE = 1000;
 
 	public static void main(String[] args) {
 
@@ -24,24 +25,25 @@ public class Main {
 		// sorters.add(new InsertionSorter());
 		// sorters.add(new SelectionSorter());
 		// sorters.add(new BubbleSorter());
-		sorters.add(new MergeSorter());
-		sorters.add(new BetterMergeSorter());
-		sorters.add(new QuickSorter());
-
+//		sorters.add(new MergeSorter());
+//		sorters.add(new BetterMergeSorter());
+//		sorters.add(new QuickSorter());
+		sorters.add(new HeapSorter());
 		
 		// Lasse Algorithmen gegen verschiedene Eingaben laufen
-		runSortersOnInput(sorters, TestDataFactory.createSortedArray(SIZE), "SORTIERT");
-
-		// Eingabe weicht um n/20 zufällige Sortierungen von sortierter Eingabe ab
-		runSortersOnInput(sorters, TestDataFactory.createArrayWithRandomSwaps(SIZE, SIZE / 20), "VERTAUSCHUNGEN 5%");
-		
-		// Eingabe enthält zuerst 90% der Zahlen sortiert, dann die fehlenden 10% unsortiert
-		runSortersOnInput(sorters, TestDataFactory.createPartiallySortedArray(SIZE, 0.10), "TEILSORTIERT 90%");
-
-		runSortersOnInput(sorters, TestDataFactory.createRandomArray(SIZE), "UNSORTIERT");
-
-		runSortersOnInput(sorters, TestDataFactory.createReverseSortedArray(SIZE), "UMGEKEHRT SORTIERT");
-
+//		runSortersOnInput(sorters, TestDataFactory.createSortedArray(SIZE), "SORTIERT");
+//
+//		// Eingabe weicht um n/20 zufällige Sortierungen von sortierter Eingabe ab
+//		runSortersOnInput(sorters, TestDataFactory.createArrayWithRandomSwaps(SIZE, SIZE / 20), "VERTAUSCHUNGEN 5%");
+//		
+//		// Eingabe enthält zuerst 90% der Zahlen sortiert, dann die fehlenden 10% unsortiert
+//		runSortersOnInput(sorters, TestDataFactory.createPartiallySortedArray(SIZE, 0.10), "TEILSORTIERT 90%");
+//
+//		runSortersOnInput(sorters, TestDataFactory.createRandomArray(SIZE), "UNSORTIERT");
+//
+//		runSortersOnInput(sorters, TestDataFactory.createReverseSortedArray(SIZE), "UMGEKEHRT SORTIERT");
+		Integer[] input = {0,1,2,3,4,5};
+		runSortersOnInput(sorters, input, "HeapSorter");
 	}
 
 	/* Hilfsmethoden, nicht relevant zur Bearbeitung der Aufgaben. */
